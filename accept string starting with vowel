@@ -1,0 +1,13 @@
+%{
+#include <stdio.h>
+%}
+
+%%
+^[aeiouAEIOU][a-zA-Z]*$   { printf("Valid string\n"); }
+.                         { printf("Invalid string\n"); }
+%%
+
+int main() {
+    yylex();
+    return 0;
+}
