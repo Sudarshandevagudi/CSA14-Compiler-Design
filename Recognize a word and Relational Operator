@@ -1,0 +1,14 @@
+%{
+#include <stdio.h>
+%}
+
+%%
+[a-zA-Z]+[ \t]*[=<>][ \t]*   { printf("Word: %s, Relational Operator: %s\n", yytext, yytext + yyleng - 1); }
+.                            ;
+
+%%
+
+int main() {
+    yylex();
+    return 0;
+}
