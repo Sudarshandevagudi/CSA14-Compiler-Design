@@ -1,0 +1,16 @@
+%{
+#include <stdio.h>
+int count = 0;
+%}
+
+%%
+"your_word" { count++; }
+.           ;
+
+%%
+
+int main() {
+    yylex();
+    printf("Frequency of the word: %d\n", count);
+    return 0;
+}
