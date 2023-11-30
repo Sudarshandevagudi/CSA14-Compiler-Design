@@ -2,8 +2,8 @@
 int vowel_cnt=0,consonant_cnt=0;
 %}
 
-vowel [aeiou]+
-consonant [^aeiou]
+vowel [aeiouAEIOU]+
+consonant [bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]
 eol \n
 %%
 {eol} return 0;
