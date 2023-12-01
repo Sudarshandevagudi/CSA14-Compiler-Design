@@ -1,16 +1,18 @@
 %%
-[\t ]+ ;
-[0-9]+|[0-9]*\.[0-9]+ { printf("\n%s is NUMBER", yytext);}
-#.* { printf("\n%s is COMMENT", yytext);}
-[a-zA-Z]+ { printf("\n%s is WORD", yytext);}
-\n { ECHO;}
+[\t ]+       ;  
+[0-9]+|[0-9]*\.[0-9]+ { printf("%s is NUMBER\n", yytext); }
+#.*          { printf("%s is COMMENT\n", yytext); }
+[a-zA-Z]+    { printf("%s is WORD\n", yytext); }
+\n           { ECHO; printf("\n"); }
 %%
+
 int main()
 {
-	while( yylex());
+    yylex();
+    return 0;
 }
 
-int yywrap( )
+int yywrap()
 {
-	return 1;
+    return 1;
 }
