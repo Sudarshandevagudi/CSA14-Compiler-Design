@@ -3,18 +3,21 @@
 %}
 
 %%
-if|else {printf("%s is a keyword\n", yytext);}
-[0-9]+ {printf("%s is a digit\n", yytext);}
-[a-z A-Z]+ {printf("%s is an alphabet\n", yytext);}
+if    { printf("%s is a keyword\n", yytext); }
+else  { printf("%s is a keyword\n", yytext); }
+[0-9]+ { printf("%s is a digit\n", yytext); }
+[a-zA-Z]+ { printf("%s is an alphabet\n", yytext); }
 . ;
 %%
+
 int main()
 {
-printf("\n Enter the input string:");	
-yylex();
+    printf("\nEnter the input string: ");    
+    yylex();
+    return 0;
 }
 
 int yywrap()
 {
-return 1;
+    return 1;
 }
